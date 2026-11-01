@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodot Activity · Toallitas 2x54 Pack Ahorro</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #ffffff;
+      color: #1c1c2e;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    .page { width: 100%; max-width: 480px; margin: 0 auto; }
+
+    /* Top bar */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid #f3e3ec;
+    }
+    .brand { font-weight: 900; font-size: 20px; color: #1e3fae; letter-spacing: 0.3px; font-style: italic; }
+    .brand sup { font-size: 9px; }
+    .btn-mini {
+      display: inline-flex;
+      align-items: center;
+      background: #ffe600;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-weight: 800;
+      font-size: 13px;
+      color: #1c1c2e;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 30px 24px 34px;
+      background: linear-gradient(180deg, #fdf1f7 0%, #ffffff 78%);
+      text-align: center;
+    }
+    .pack {
+      position: relative;
+      width: 252px;
+      height: 158px;
+      margin: 0 auto;
+      border-radius: 18px;
+      background: linear-gradient(105deg, #454a9e 0%, #454a9e 38%, #e2007a 58%, #e2007a 100%);
+      box-shadow: 0 18px 32px rgba(226, 0, 122, 0.25);
+    }
+    .pack::before {
+      content: "";
+      position: absolute;
+      left: 96px;
+      top: -8px;
+      width: 22px;
+      height: 174px;
+      background: rgba(255, 255, 255, 0.9);
+      transform: skewX(-10deg);
+      border-radius: 3px;
+    }
+    .pack-strip {
+      position: absolute;
+      top: 10px;
+      left: 14px;
+      width: 84px;
+      font-size: 8.5px;
+      line-height: 1.35;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 700;
+      text-align: left;
+    }
+    .pack-body {
+      position: absolute;
+      top: 26px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+    .ph-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #1e3fae;
+      font-weight: 900;
+      font-size: 17px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: 14px;
+      flex-shrink: 0;
+    }
+    .ph-badge span { font-size: 8px; font-weight: 700; letter-spacing: 0.4px; }
+    .pack-brand { flex: 1; text-align: center; padding-right: 8px; }
+    .logo-oval {
+      display: inline-block;
+      background: #ffffff;
+      color: #1e3fae;
+      font-weight: 900;
+      font-style: italic;
+      font-size: 22px;
+      letter-spacing: 1px;
+      padding: 3px 15px 5px;
+      border-radius: 999px;
+    }
+    .activity-line { margin-top: 5px; color: #ffffff; display: flex; align-items: baseline; justify-content: center; gap: 6px; }
+    .activity { font-size: 19px; font-weight: 600; font-style: italic; }
+    .stars { font-size: 8px; letter-spacing: 2px; color: #ffe600; }
+    .pack-count { margin-top: 4px; color: #ffffff; font-weight: 800; font-size: 12px; }
+    .pack-aroma { margin-top: 1px; color: rgba(255, 255, 255, 0.92); font-size: 9px; }
+    .leaf-tag {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      width: 76px;
+      background: #3aa655;
+      color: #ffffff;
+      font-size: 8px;
+      font-weight: 700;
+      line-height: 1.25;
+      padding: 4px 8px;
+      border-radius: 10px 10px 10px 2px;
+      text-align: left;
+    }
+    .sticker {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ffffff;
+      color: #1c1c2e;
+      font-weight: 900;
+      font-size: 10px;
+      line-height: 1.15;
+      letter-spacing: 0.5px;
+      padding: 5px 7px;
+      border-radius: 4px;
+      transform: rotate(8deg);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+      text-align: center;
+    }
+
+    h1 { margin-top: 22px; font-size: 32px; font-weight: 900; letter-spacing: -0.5px; }
+    .sub { margin-top: 7px; font-size: 15px; color: #7a7a90; }
+    .price-row { margin-top: 18px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .price { font-size: 30px; font-weight: 900; }
+    .price-meta { font-size: 11.5px; line-height: 1.45; color: #7a7a90; text-align: left; }
+    .btn-primary {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 52px;
+      border-radius: 999px;
+      background: #ffe600;
+      font-size: 16px;
+      font-weight: 800;
+      color: #1c1c2e;
+      box-shadow: 0 10px 22px rgba(255, 230, 0, 0.35);
+    }
+
+    /* Features */
+    .features { padding: 28px 24px 8px; }
+    .features h2 { font-size: 20px; font-weight: 900; letter-spacing: -0.2px; margin-bottom: 16px; }
+    .feature { display: flex; align-items: center; gap: 14px; padding: 9px 0; }
+    .f-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: #fdeaf4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .f-icon svg { width: 22px; height: 22px; }
+    .f-text { font-size: 15px; font-weight: 600; }
+
+    /* Offer */
+    .offer { padding: 22px 24px 0; }
+    .offer-card {
+      border: 1px solid #f6e2ee;
+      border-radius: 20px;
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: 0 14px 30px rgba(28, 28, 46, 0.06);
+    }
+    .offer-title { font-size: 16px; font-weight: 800; }
+    .offer-price {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 0 6px;
+      font-size: 38px;
+      font-weight: 900;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 62%, #ffe600 62%);
+    }
+    .offer-meta { margin-top: 8px; font-size: 12px; color: #7a7a90; }
+    .btn-dark {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 48px;
+      border: none;
+      border-radius: 999px;
+      background: #1c1c2e;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    .footer { padding: 26px 0 30px; text-align: center; }
+    .brand-sm { font-weight: 900; font-style: italic; font-size: 15px; color: #1e3fae; }
+    .brand-sm sup { font-size: 8px; }
+
+    /* Desktop: center the column */
+    @media (min-width: 520px) {
+      body { background: #f6f2f4; }
+      .page { background: #ffffff; box-shadow: 0 0 40px rgba(28, 28, 46, 0.08); min-height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <span class="brand">Dodot<sup>®</sup></span>
+      <a class="btn-mini" href="#oferta">Comprar</a>
+    </header>
+
+    <section class="hero">
+      <div class="pack">
+        <div class="pack-strip">Máxima protección de la piel</div>
+        <div class="pack-body">
+          <div class="ph-badge">pH<span>natural</span></div>
+          <div class="pack-brand">
+            <div class="logo-oval">DODOT</div>
+            <div class="activity-line"><span class="activity">activity</span><span class="stars">★★★★★</span></div>
+            <div class="pack-count">54 Toallitas</div>
+            <div class="pack-aroma">con aroma refrescante</div>
+          </div>
+          <div class="leaf-tag">fibras de origen vegetal</div>
+        </div>
+        <div class="sticker">PACK<br>AHORRO</div>
+      </div>
+
+      <h1>Dodot Activity</h1>
+      <p class="sub">54 toallitas con aroma refrescante</p>
+
+      <div class="price-row">
+        <span class="price">2,99 €</span>
+        <span class="price-meta">2x54 Pack Ahorro · IVA incluido<br>La unidad le sale 1,50 €</span>
+      </div>
+
+      <a class="btn-primary" href="#oferta">Comprar ahora</a>
+    </section>
+
+    <section class="features">
+      <h2>Máxima protección de la piel</h2>
+      <div class="feature">
+        <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e2007a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span>
+        <span class="f-text">pH natural</span>
+      </div>
+      <div class="feature">
+        <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e2007a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19C5 9 12 5 20 4c-1 8-5 15-15 15z"/><path d="M5 19c3-5 7-8 11-10"/></svg></span>
+        <span class="f-text">Fibras de origen vegetal</span>
+      </div>
+      <div class="feature">
+        <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e2007a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l1.7 4.8L18.5 10l-4.8 1.7L12 16.5l-1.7-4.8L5.5 10l4.8-1.7z"/><path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></span>
+        <span class="f-text">Aroma refrescante</span>
+      </div>
+    </section>
+
+    <section class="offer" id="oferta">
+      <div class="offer-card">
+        <div class="offer-title">Toallitas Dodot Activity 2x54</div>
+        <div class="offer-price">2,99 €</div>
+        <div class="offer-meta">IVA incluido · La unidad le sale 1,50 €</div>
+        <button type="button" class="btn-dark">Añadir al carrito</button>
+      </div>
+    </section>
+
+    <footer class="footer"><span class="brand-sm">Dodot<sup>®</sup></span></footer>
+  </div>
+</body>
+</html>
